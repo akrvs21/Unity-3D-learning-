@@ -1,0 +1,83 @@
+1） 游戏对象运动的本质是什么？
+Answer: The nature of the game object movement is the change in each frame of the game, spatial changes.
+For example, we can use the position and rotation properties of the game object's transform property to change the game object's rotation angle or movement position.
+2） 请用三种方法以上方法，实现物体的抛物线运动。（如，修改Transform属性，使用向量Vector3的方法…）：
+Answer：
+【1】
+The first method is to use the change of position to achieve parabolic motion, the horizontal direction of the movement is uniform,
+the vertical direction is a certain acceleration changes, according to the physical laws, the two directions of the motion vector
+can be added To achieve parabolic motion. Code :
+
+using System.Collections;  
+using System.Collections.Generic;  
+using UnityEngine;  
+  
+public class move1 : MonoBehaviour {  
+  
+    public float speed = 1;  
+     
+    void Start () {  
+        Debug.Log("start!");  
+    }  
+      
+    
+    void Update () {  
+  
+        this.transform.position += Vector3.down * Time.deltaTime * (speed/10);  
+        this.transform.position += Vector3.right * Time.deltaTime * 5;  
+        speed++;  
+    }  
+}  
+
+【2】
+The second method is to directly declare to create a Vector3 variable, and define the value of the variable, which is
+a uniformly increasing value in the vertical direction. The horizontal direction is a constant value, and then the original position
+attribute of the game object is "Add this vector" to achieve parabolic motion. The code is as follows:
+
+using System.Collections;  
+using System.Collections.Generic;  
+using UnityEngine;  
+  
+public class move2 : MonoBehaviour {  
+  
+    public float speed = 1;  
+    
+    void Start () {  
+        Debug.Log("start!");  
+    }  
+      
+    
+    void Update () {  
+  
+        Vector3 change = new Vector3( Time.deltaTime*5, -Time.deltaTime*(speed/10), 0);  
+        ;  
+        this.transform.position += change;  
+        speed++;  
+    }  
+}  
+
+【3】 
+This method is similar to the second method. The difference is that the second method directly uses Vector3's for vector addition, 
+while the third method uses the translate function in transform to change the position. 
+Code:
+using System.Collections;  
+using System.Collections.Generic;  
+using UnityEngine;  
+  
+public class move3 : MonoBehaviour {  
+  
+    public float speed = 1;  
+    
+    void Start () {  
+        Debug.Log("start!");  
+    }  
+      
+   
+    void Update () {  
+  
+        Vector3 change = new Vector3(Time.deltaTime * 5, -Time.deltaTime * (speed / 10), 0);  
+  
+        transform.Translate(change);  
+        speed++;  
+    }  
+}  
