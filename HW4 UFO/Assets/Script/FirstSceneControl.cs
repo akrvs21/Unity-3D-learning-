@@ -91,6 +91,7 @@ public class FirstSceneControl : MonoBehaviour, ISceneControl, IUserAction
             disk.SetActive(true);
         }
 
+<<<<<<< HEAD
     }
 
     public void LoadResources()
@@ -98,6 +99,15 @@ public class FirstSceneControl : MonoBehaviour, ISceneControl, IUserAction
 
         GameObject greensward = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/greensward"));
     }
+=======
+    }
+
+    public void LoadResources()
+    {
+
+        GameObject greensward = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/greensward"));
+    }
+>>>>>>> origin/master
 
 
 

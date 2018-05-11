@@ -4,7 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DiskFactory : MonoBehaviour
+<<<<<<< HEAD
 {
+=======
+{
+>>>>>>> origin/master
     
 
     public GameObject diskPrefab;

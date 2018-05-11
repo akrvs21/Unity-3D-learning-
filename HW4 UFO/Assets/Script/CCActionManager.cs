@@ -5,7 +5,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CCActionManager : SSActionManager, ISSActionCallback
+<<<<<<< HEAD
 {
+=======
+{
+>>>>>>> origin/master
    public FirstSceneControl sceneController;
     public List<CCFlyAction> Fly;
     public int DiskNumber = 0;
